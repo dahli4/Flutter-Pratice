@@ -1,6 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-* linguist-vendored
-*.dart linguist-vendored=false
-*.swift linguist-vendored=false
-*.kotlin linguist-vendored=false
+*.cpp linguist-vendored=false
+*.html linguist-vendored=false
+
