@@ -1,6 +1,7 @@
+*.html linguist-detectable=false
+*.c++ linguist-detectable=false
+*.c linguist-detectable=false
+*.cmake linguist-detectable=false
 # Auto detect text files and perform LF normalization
 * text=auto
-*.html linguist-detectable=false
-*.c+ linguist-detectable=false
-*.c linguist-detectable=false
-*.cm linguist-detectable=false
+
