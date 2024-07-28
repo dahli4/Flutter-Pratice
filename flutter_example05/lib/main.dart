@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 void main() {
   runApp(
@@ -27,17 +28,31 @@ class ConstraintsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 500,
-      width: 500,
-      color: Colors.blue,
-      child: SingleChildScrollView(
-        child: Container(
-          color: Colors.red,
-          height: 300,
-          width: 300,
+    return Row(
+      children: [
+        Flexible(
+          child: Expanded(
+            child: Container(
+              color: Colors.blue,
+              child: Text(
+                "Hello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello WorldHello "
+                "WorldHello WorldHello WorldHello WorldHello World",
+                style: TextStyle(fontSize: 30),
+              ),
+            ),
+          ),
         ),
-      ),
+        Flexible(
+          child: Expanded(
+            child: Container(
+                color: Colors.red,
+                child: Text(
+                  "Hello World",
+                  style: TextStyle(fontSize: 30),
+                )),
+          ),
+        ),
+      ],
     );
   }
 }
