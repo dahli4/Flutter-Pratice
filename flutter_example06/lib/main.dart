@@ -19,7 +19,7 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       ExampleStateless(),
-      ExampleStateful(),
+      ExampleStateful(index: 3),
     ]);
   }
 }
@@ -38,14 +38,29 @@ class ExampleStateless extends StatelessWidget {
 }
 
 class ExampleStateful extends StatefulWidget {
-  const ExampleStateful({super.key});
+  final int index;
+  const ExampleStateful({required this.index, super.key});
 
   @override
   State<ExampleStateful> createState() => _ExampleStatefulState();
 }
 
 class _ExampleStatefulState extends State<ExampleStateful> {
-  int index = 0;
+  late int _index;
+  late TextEditingController textEditingController;
+
+  @override
+  void initState() {
+    super.initState();
+    _index = widget.index;
+    textEditingController = textEditingController();
+  }
+
+  @override
+  void dispose() {
+    textEditingController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,17 +68,17 @@ class _ExampleStatefulState extends State<ExampleStateful> {
       child: GestureDetector(
         onTap: () {
           setState(() {
-            if (index == 5) {
-              index = 0;
+            if (_index == 5) {
+              _index = 0;
               return;
             }
 
-            index++;
+            _index++;
           });
         },
         child: Container(
-          color: Colors.red.withOpacity(index / 5),
-          child: Center(child: Text('$index')),
+          color: Colors.red.withOpacity(_index / 5),
+          child: Center(child: Text('$_index')),
         ),
       ),
     );
