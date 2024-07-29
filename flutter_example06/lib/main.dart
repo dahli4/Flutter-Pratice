@@ -47,18 +47,18 @@ class ExampleStateful extends StatefulWidget {
 
 class _ExampleStatefulState extends State<ExampleStateful> {
   late int _index;
-  late TextEditingController textEditingController;
+  late TextEditingController textController;
 
   @override
   void initState() {
     super.initState();
     _index = widget.index;
-    textEditingController = textEditingController();
+    textController = TextEditingController();
   }
 
   @override
   void dispose() {
-    textEditingController.dispose();
+    textController.dispose();
     super.dispose();
   }
 
