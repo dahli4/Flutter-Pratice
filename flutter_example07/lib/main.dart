@@ -1,46 +1,112 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const AppBarApp());
+void main() {
+  runApp(const MyApp());
+}
 
-class AppBarApp extends StatelessWidget {
-  const AppBarApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const AppBarExample(),
+      title: 'Flutter App',
+      home: const MainPage(),
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue).copyWith(
-          surfaceTint: Colors.transparent,
-        ),
-        appBarTheme: AppBarTheme(
-          elevation: 4.0,
-          backgroundColor: Colors.blue,
-          titleTextStyle: const TextStyle(fontSize: 26, color: Colors.white),
-          shadowColor: Colors.deepPurple.withOpacity(0.5),
-        ),
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
     );
   }
 }
 
-class AppBarExample extends StatelessWidget {
-  const AppBarExample({super.key});
+class MainPage extends StatefulWidget {
+  const MainPage({Key? key}) : super(key: key);
+
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  List<String> friendList = [
+    "Andrew",
+    "Brian",
+    "Catherine",
+    "Wilson",
+    "Raul",
+    "Daniel",
+    "John",
+  ];
 
   @override
   Widget build(BuildContext context) {
-    final isUsingMaterial3 = Theme.of(context).useMaterial3;
-
     return Scaffold(
       appBar: AppBar(
-        title: Text(isUsingMaterial3 ? 'Using Material 3' : 'Using Material 2'),
+        title: const Text("Material 3 Design"),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        centerTitle: true,
+        titleTextStyle: const TextStyle(color: Colors.white, fontSize: 24),
       ),
-      body: const Center(
-        child: Text(
-          "I love Flutter.",
-          style: TextStyle(fontSize: 24),
+      body: ListView.builder(
+          itemCount: friendList.length,
+          itemBuilder: (context, index) {
+            return cardContainer(name: friendList[index], number: index + 1);
+          }),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showFloatingDialog();
+        },
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
+
+  Widget cardContainer({String name = "", int number = 0}) {
+    return Card(
+      margin: const EdgeInsets.all(10),
+      child: ListTile(
+        title: Container(
+          width: MediaQuery.of(context).size.width,
+          padding: const EdgeInsets.all(12),
+          child: Text("$number. $name", style: const TextStyle(fontSize: 20)),
+        ),
+        subtitle: Row(
+          children: [
+            TextButton(
+              onPressed: () {},
+              child: const Text("Details"),
+            ),
+            FilledButton.tonal(
+              onPressed: () {},
+              child: const Text("Follow"),
+            ),
+          ],
         ),
       ),
+    );
+  }
+
+  void showFloatingDialog() {
+    showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (context) {
+        return AlertDialog(
+          content: const Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Center(child: Text("Do you want to add a friend?")),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text("No"),
+            ),
+            FilledButton(onPressed: () {}, child: const Text("Yes")),
+          ],
+        );
+      },
     );
   }
 }
