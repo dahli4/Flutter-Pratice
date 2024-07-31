@@ -2,10 +2,10 @@ import 'dart:ffi';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(const myApp());
+void main() => runApp(const MyApp());
 
-class myApp extends StatelessWidget {
-  const myApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class myApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("다양한 flutter의 입력 알아보기"),
+          title: const Text("다양한 flutter 입력 알아보기"),
           backgroundColor: Colors.blue,
           elevation: 4.0,
           shadowColor: Colors.deepPurple,
