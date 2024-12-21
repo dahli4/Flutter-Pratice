@@ -1,0 +1,5 @@
+{
+    "editor.minimap.maxColumn": 180,
+    "java.compile.nullAnalysis.mode": "automatic",
+    "files.autoSave": "afterDelay"
+}
