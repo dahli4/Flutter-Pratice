@@ -17,13 +17,13 @@ class MyApp extends StatelessWidget {
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 40,
+              horizontal: 30,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(
-                  height: 40,
+                  height: 30,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
                           'Hey, Selena',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 28,
+                            fontSize: 24,
                             fontWeight: FontWeight.w800,
                           ),
                         ),
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
                           'Welcome back',
                           style: TextStyle(
                             color: Colors.white.withOpacity(0.8),
-                            fontSize: 18,
+                            fontSize: 16,
                           ),
                         ),
                       ],
@@ -51,12 +51,12 @@ class MyApp extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 70,
+                  height: 50,
                 ),
                 Text(
                   'Total Balance',
                   style: TextStyle(
-                    fontSize: 22,
+                    fontSize: 18,
                     color: Colors.white.withOpacity(0.8),
                   ),
                 ),
@@ -66,13 +66,13 @@ class MyApp extends StatelessWidget {
                 const Text(
                   '\$5 194 482',
                   style: TextStyle(
-                    fontSize: 48,
+                    fontSize: 38,
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
                   ),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -90,7 +90,7 @@ class MyApp extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 60,
+                  height: 40,
                 ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -100,22 +100,23 @@ class MyApp extends StatelessWidget {
                       'Wallets',
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: 48,
+                          fontSize: 38,
                           fontWeight: FontWeight.w600),
                     ),
                     Text(
                       'View All',
                       style: TextStyle(
                         color: Colors.white.withOpacity(0.8),
-                        fontSize: 18,
+                        fontSize: 16,
                       ),
                     ),
                   ],
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 Container(
+                  clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(
                     color: const Color(0xFF1F2123),
                     borderRadius: BorderRadius.circular(25),
@@ -123,6 +124,7 @@ class MyApp extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(20),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -158,6 +160,17 @@ class MyApp extends StatelessWidget {
                             ),
                           ],
                         ),
+                        Transform.scale(
+                          scale: 2.2,
+                          child: Transform.translate(
+                            offset: const Offset(-5, 10),
+                            child: const Icon(
+                              Icons.euro_rounded,
+                              color: Colors.white,
+                              size: 68,
+                            ),
+                          ),
+                        )
                       ],
                     ),
                   ),
