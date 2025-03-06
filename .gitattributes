@@ -6,4 +6,5 @@
 *.h linguist-detectable=false
 *.txt linguist-detectable=false
 *.cc linguist-detectable=false
+*.c linguist-detectable=false
 
