@@ -14,40 +14,36 @@ class _HomeScreenState extends State<HomeScreen> {
   int totalSeconds = initialSeconds;
   bool isRunning = false;
   late Timer timer;
-  late DateTime startTime;
 
   void onTick(Timer timer) {
-    final elapsedSeconds = DateTime.now().difference(startTime).inSeconds;
-
     setState(() {
       // 실제 경과 시간에 기반하여 남은 시간 계산
-      totalSeconds = initialSeconds - elapsedSeconds;
-
-      // 타이머가 끝나면 타이머 중지
-      if (totalSeconds <= 0) {
-        totalSeconds = 0;
-        timer.cancel();
-        isRunning = false;
-      }
+      totalSeconds = totalSeconds - 1;
     });
   }
 
   void onStartPressed() {
-    if (isRunning) return;
-
-    isRunning = true;
-    startTime = DateTime.now();
-
     timer = Timer.periodic(
       const Duration(seconds: 1),
       onTick,
     );
+    setState(() {
+      isRunning = true;
+    });
+  }
+
+  void onPausePressed() {
+    timer.cancel();
+    setState(() {
+      isRunning = false;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
+      // ignore: deprecated_member_use
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: Column(
         children: [
           Flexible(
@@ -69,8 +65,10 @@ class _HomeScreenState extends State<HomeScreen> {
               child: IconButton(
                 iconSize: 120,
                 color: Theme.of(context).cardColor,
-                onPressed: onStartPressed,
-                icon: const Icon(Icons.play_circle_outline),
+                onPressed: isRunning ? onPausePressed : onStartPressed,
+                icon: Icon(isRunning
+                    ? Icons.pause_circle_outline
+                    : Icons.play_circle_outline),
               ),
             ),
           ),
