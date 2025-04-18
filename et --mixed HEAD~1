@@ -1,0 +1,49 @@
+[33m66586b7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m 250418 타이머리셋
+[33meb01ce1[m 250417 타이머 포맷 변경
+[33m5f6d790[m 250417 타이머정지
+[33m74dd5b1[m 250416 타이머추가
+[33mfda7652[m 250415 Pomodoros
+[33mb4244d7[m 250414 라이프사이클
+[33mb667992[m 250407 BuildContext
+[33m7bb4e31[m 250101
+[33m0893dad[m 250101
+[33mde71ebf[m 250101
+[33m07e7b5a[m 241228 아이콘 추가
+[33m913e668[m 241227 Card 추가
+[33m052d229[m 241225
+[33m44f9d0c[m 241222 버튼 위젯 추가
+[33m30068b2[m 241222
+[33m8abe527[m 240801 - 3
+[33mb9be417[m 240801 - 2
+[33mc4c6448[m 240801
+[33m6c6670f[m 240731
+[33mffd5f1a[m 240730
+[33m94e935b[m 240729
+[33m4a2957d[m 240729
+[33mf17e306[m 240728
+[33m69ecf69[m 240728
+[33m14475d1[m 240706 Widget 쌓아올리기
+[33mac16455[m Update .gitattributes
+[33m1ea4882[m Update .gitattributes
+[33mad2a701[m Update .gitattributes
+[33mf658baf[m Update .gitattributes
+[33mf19d0b9[m Update .gitattributes
+[33mf4ab310[m Update .gitattributes
+[33m55f6c43[m Update .gitattributes
+[33mcb2999a[m Update .gitattributes
+[33mc38a700[m Update .gitattributes
+[33m3e839a6[m Update .gitattributes
+[33m0ad940f[m Update .gitattributes
+[33me224873[m Update .gitattributes
+[33m896f5e8[m Update .gitattributes
+[33mdb52c2c[m Update .gitattributes
+[33m30757bc[m Update .gitattributes
+[33mecbd12b[m Update .gitattributes
+[33m5295425[m Update .gitattributes
+[33m12616d2[m Update .gitattributes
+[33mc93e423[m Update .gitattributes
+[33m5560381[m 240703 Widget
+[33m1c64775[m 240703 위젯 상하좌우로 배치하기
+[33m7d524f6[m 240702-앱바
+[33m1fb4fca[m 240702-Flutter_Widget
+[33mf7f4d6c[m Initial commit
